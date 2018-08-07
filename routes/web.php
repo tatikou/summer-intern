@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/all', 'Api\EmployeeController@all');
+Route::get('user/{id}', 'UserController@update');
+Route::get('/index', 'Api\EmployeeController@index');
+
