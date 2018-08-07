@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "hello world";
 });
+Route::get('/goodby','Hello2Contoroller@hello');
