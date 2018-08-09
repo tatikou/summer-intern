@@ -11,7 +11,7 @@ class BeaconSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Beacons')->insert([
+        DB::table('beacons')->insert([
             ['major' => '333', 'minor' => '333','position' => '0', ],
             ['major' => '400', 'minor' => '400','position' => '1', ],
             ['major' => '333', 'minor' => '333','position' => '0', ],
