@@ -24,7 +24,7 @@ class BeaconController extends Controller
         }else{
             //echo "入っとるで";
             Employee::where('family_name', $family_name)->Where('given_name', $given_name)->update(['position'=> $beacon->position]);
-            return 'ok';
+            return response()->json('success');
         }
     }
 
