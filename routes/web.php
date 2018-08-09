@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/all', 'Api\EmployeeController@all');
-Route::get('user/{id}', 'UserController@update');
-Route::get('/index', 'Api\EmployeeController@index');
+Route::get('/employee/{family_name}/{given_name}','Api\EmployeeController@match');
+Route::get('/index/', 'Api\EmployeeController@error');
+Route::get('/employee/{given_name}','Api\EmployeeController@test');
+
 

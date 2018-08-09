@@ -20,6 +20,7 @@ class CreateEmployeesTable extends Migration
             $table->string('family_name_kana', 100);
             $table->string('given_name_kana',100);
             $table->string('beacon_id',100)->nullable();
+            $table->string('position',100 );
             $table->timestamps();
         });
     }

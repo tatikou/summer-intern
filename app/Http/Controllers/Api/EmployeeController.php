@@ -5,40 +5,36 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Employee;
-use DB;
 
 
 class EmployeeController extends Controller
 {
 
-    public function index()
+    public function match($family_name,$given_name)
     {
-        //ここで入力された姓名を受け取る
-        // $input_f_name = $_POST['input_f_name'];
-        // $input_g_name = $_POST['input_g_name'];
-
-
-        $users = Employee::all();
-        foreach ($users as $user) {
-        echo $user->given_name;
+        $user = Employee::where('family_name', $family_name)->where('given_name', $given_name)->first();
+        if (!isset($user)){
+            //echo "あかんで";
+            return response()->json('従業員情報を取得できません',500);
+        }else{
+            //echo "入っとるで";
+            return response()->json($user,200);
         }
-
-        return $users;
     }
 
 
-    public function all()
+    public function test($given_name)
     {
-        return response()->json(Employee::all()->toArray(),200);
+        Employee::where('given_name', $given_name)->update(['given_name'=>'ゴンザエモン']);
+        return 'ok';
     }
 
-  /*  public function index(Request $request, $family, $give)
+        //return response()->json(Employee::all()->toArray(),200);
+
+
+    public function error()
     {
-        $emp = Employee::where('family_name', $family)->first();
-
-        $user= Employee::with('family_name')->first();
-        return $user->toArray();
-    }*/
-
+        return response()->json('従業員情報を取得できません',500);
+    }
 
 }

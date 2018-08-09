@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/all', 'Api\EmployeeController@all');
+Route::get('/employee/{family_name}/{given_name}','Api\EmployeeController@match');
+Route::post('/employee/{family_name}/{given_name}/position','Api\BeaconController@beacon');
+Route::get('/employee/{given_name}','Api\EmployeeController@test');
+Route::get('/index/', 'Api\EmployeeController@error');
+
+Route::get('/employee/{given_name}','Api\EmployeeController@test');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
