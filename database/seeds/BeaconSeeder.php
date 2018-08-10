@@ -12,9 +12,12 @@ class BeaconSeeder extends Seeder
     public function run()
     {
         DB::table('beacons')->insert([
-            ['major' => '333', 'minor' => '333','position' => '0', ],
-            ['major' => '400', 'minor' => '400','position' => '1', ],
-            ['major' => '333', 'minor' => '333','position' => '0', ],
+            ['major' => '100', 'minor' => '100','position' => 'カフェスペース', ],
+            ['major' => '200', 'minor' => '200','position' => '会議室', ],
+            ['major' => '300', 'minor' => '300','position' => '会議室2', ],
+            ['major' => '333', 'minor' => '333','position' => '飯田橋駅', ],
+            ['major' => '400', 'minor' => '400','position' => '南国', ],
+
         ]);
     }
 }
